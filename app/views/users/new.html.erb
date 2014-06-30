@@ -1,3 +1,94 @@
 <% provide(:title, 'Sign Up') %>
-<h1>Sign Up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="row">
+	<div class="small-3 large-centered columns text-center">
+		<%= image_tag("merl.png") %>
+	</div>
+	<div class="small-8 large-centered columns">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+			<fieldset>
+			<legend>Account Information</legend>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+
+				<%= f.label :password_confirmation, "Confirmation" %>
+				<%= f.password_field :password_confirmation %>
+			</fieldset>
+			
+			<fieldset>
+			<legend>Industry Experience</legend>
+				<item class="form-item">
+				<%= f.check_box :biotechnology, {checked:false} %>
+				<%= f.label :biotechnology, "Biotechnology" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :software, {checked:false} %>
+				<%= f.label :software, "Software" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :networking_wirless, {checked:false} %>
+				<%= f.label :networking_wirless, "Networking/Wireless Solutions" %>
+				</item>
+				
+				<item class="form-item">
+				<%= f.check_box :physics_engineering, {checked:false} %>
+				<%= f.label :physics_engineering, "Physics/Engineering" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :chemistry, {checked:false} %>
+				<%= f.label :chemistry, "Chemistry" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :medical_devices, {checked:false} %>
+				<%= f.label :medical_devices, "Medical Devices" %>
+				</item>
+			</fieldset>
+
+			<fieldset>
+			<legend>Mentorship Qualifications</legend>
+				<item class="form-item">
+				<%= f.check_box :availability, {checked:false} %>
+				<%= f.label :availability, "Available in the next 18 months as CEO/COO" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :mentoring, {checked:false} %>
+				<%= f.label :mentoring, "Interested in mentoring companies" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :deffered_payment, {checked:false} %>
+				<%= f.label :deffered_payment, "Will initially accept deferred payment or equity in lieu of salary" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :raised_money, {checked:false} %>
+				<%= f.label :raised_money, "Have Raised at least $5M as C-level executive" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :successful_exit, {checked:false} %>
+				<%= f.label :successful_exit, "Have participated in a successful company exit" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :startup_experience, {checked:false} %>
+				<%= f.label :startup_experience, "Have 2+ years with a start-up or 10+ years in industry" %>
+				</item>
+			</fieldset>
+
+			<div class="text-center"><%= f.submit "Join MERL", class: "button secondary" %></div>
+    		<% end %>
+
+	</div>
+</div>

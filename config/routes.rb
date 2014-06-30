@@ -1,4 +1,5 @@
 Merl::Application.routes.draw do
+  resources :users
   get "users/new"
   root  'static_pages#home'
   match '/about',   to: 'static_pages#about', via: 'get'

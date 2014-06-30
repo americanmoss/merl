@@ -13,6 +13,20 @@ describe User do
 	it { should respond_to(:password_confirmation) }
 	it { should respond_to(:authenticate) }
 
+	it { should respond_to(:biotechnology) }
+	it { should respond_to(:software) }
+	it { should respond_to(:networking_wirless) }
+	it { should respond_to(:physics_engineering) }
+	it { should respond_to(:chemistry) }
+	it { should respond_to(:medical_devices) }
+
+	it { should respond_to(:availability) }
+	it { should respond_to(:mentoring) }
+	it { should respond_to(:deffered_payment) }
+	it { should respond_to(:raised_money) }
+	it { should respond_to(:successful_exit) }
+	it { should respond_to(:startup_experience) }
+
 	it { should be_valid }
 
 	describe "when name is not present" do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630172317) do
+ActiveRecord::Schema.define(version: 20140630200402) do
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20140630172317) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.boolean  "biotechnology",       default: false
+    t.boolean  "software",            default: false
+    t.boolean  "networking_wirless",  default: false
+    t.boolean  "physics_engineering", default: false
+    t.boolean  "chemistry",           default: false
+    t.boolean  "medical_devices",     default: false
+    t.boolean  "availability",        default: false
+    t.boolean  "mentoring",           default: false
+    t.boolean  "deffered_payment",    default: false
+    t.boolean  "raised_money",        default: false
+    t.boolean  "successful_exit",     default: false
+    t.boolean  "startup_experience",  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

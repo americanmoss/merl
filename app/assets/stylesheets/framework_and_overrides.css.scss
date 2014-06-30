@@ -6,6 +6,7 @@ $header-font-weight: bold;
 $paragraph-font-family: "Open Sans", sans-serif !default;
 $topbar-link-font-family: "Open Sans", sans-serif !default;
 $button-font-family:  "Open Sans", sans-serif !default;
+$input-font-family: "Open Sans", sans-serif !default;
 $button-font-weight: bold;
 $topbar-link-weight: bold;
 $topbar-title-weight: bold;
@@ -26,3 +27,22 @@ $secondary-color: #EFAA37 !default;
 div {
 	padding-top:rem-calc(50);
 }
+
+.call-to-action {
+	padding-bottom:rem-calc(50);
+}
+
+form {
+	font-family: "Open Sans", sans-serif !important;
+}
+
+.form-item { display:inline-block; }
+
+.field_with_errors { display: inline; }
+
+.alert-box {
+	text-align:center;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+

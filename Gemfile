@@ -12,6 +12,8 @@ group :development, :test do
 	gem 'rspec-rails', '2.13.1'
 	# Rails layout for Foundation install
 	gem 'rails_layout'
+	# Factory girl for user generation
+	gem 'factory_girl_rails', '4.2.0'
 end
 
 group :test do
