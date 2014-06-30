@@ -20,6 +20,11 @@ $secondary-color: #EFAA37 !default;
 	text-transform:uppercase;
 }
 
+.top-bar-section ul.dropdown li a {
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
 .row {
 	padding-top:0;
 }

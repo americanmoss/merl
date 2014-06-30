@@ -1,0 +1,17 @@
+<% provide(:title, "Sign in") %>
+<div class="row">
+	<div class="small-3 large-centered columns text-center">
+		<%= image_tag("merl.png") %>
+	</div>
+	<div class="small-8 large-centered columns">
+		<%= form_for(:session, url: sessions_path) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<div class="text-center"><%= f.submit "Sign in", class: "button secondary" %></div>
+		<% end %>
+  </div>
