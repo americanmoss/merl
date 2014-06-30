@@ -8,7 +8,10 @@ gem 'rails', '4.0.5'
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3', '1.3.8'
+	# Rspec for testing
 	gem 'rspec-rails', '2.13.1'
+	# Rails layout for Foundation install
+	gem 'rails_layout'
 end
 
 group :test do
@@ -17,7 +20,10 @@ group :test do
 end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', '~> 4.0.2'
+
+# Use Foundation as frontend framework
+gem 'foundation-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'
