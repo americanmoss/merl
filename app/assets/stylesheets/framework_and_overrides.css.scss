@@ -55,15 +55,33 @@ form {
 	text-transform:uppercase;
 }
 
-thead {
-	font-family: "Open Sans", sans-serif !important;
-}
-
 .table-name {
 	font-weight:bold;
 	font-size: rem-calc(17);
 }
 
+tbody tr td ul {
+	margin-bottom:0;
+}
+
 tbody tr td ul li {
 	font-size: rem-calc(15);
+}
+
+#MERL-members_wrapper {
+	font-family: "Open Sans", sans-serif !important;
+}
+
+div #MERL-members_wrapper {
+	padding-top:0;
+}
+
+#MERL-members_wrapper div {
+	padding-top:0;
+}
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
 }
