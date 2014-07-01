@@ -14,13 +14,26 @@
 				<%= f.label :email %>
 				<%= f.text_field :email %>
 
-				<%= f.label :password %>
+				<%= f.label :phone %>
+				<%= f.text_field :phone %>
+				<label><em>Please use XXX-XXX-XXXX format e.g. 123-456-7890 </em></label><br/>
+
+				<%= f.label :password, "Password" %>
 				<%= f.password_field :password %>
 
 				<%= f.label :password_confirmation, "Confirmation" %>
 				<%= f.password_field :password_confirmation %>
 			</fieldset>
 			
+			<fieldset>
+			<legend>Background Information</legend>
+				<%= f.label :organization, "Organization" %>
+				<%= f.text_field :organization %>
+
+				<%= f.label :bio, "Link to bio" %>
+				<%= f.text_field :bio %>
+			</fieldset>
+
 			<fieldset>
 			<legend>Industry Experience</legend>
 				<item class="form-item">

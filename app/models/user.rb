@@ -15,6 +15,21 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
+	def self.to_csv(options = {})
+		CSV.generate(options) do |csv|
+			csv << column_names
+			all.each do |user|
+				csv << user.attributes.values
+			end
+		end
+	end
+
+	def self.import(file)
+		CSV.foreach(file.path, headers:true) do |row|
+			User.create! row.to_hash
+		end
+	end
+
 	private
 
 	def create_remember_token

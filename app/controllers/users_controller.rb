@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
-	before_action :signed_in_user, only: [:edit, :update, :destroy]
+	require "csv"
+
+	before_action :signed_in_user, only: [:edit, :update, :destroy, :import]
 	before_action :correct_user, only: [:edit, :update]
-	before_action :admin_user, only: :destroy
+	before_action :admin_user, only: [:destroy, :import]
 	
 	def new
 		@user = User.new
@@ -14,6 +16,25 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		respond_to do |format|
+			format.html
+			format.csv { 
+				if current_user.try(:admin?) 
+					send_data @users.to_csv 
+				else
+					redirect_to(users_path)
+					flash[:error] = "Only administrators may download data"
+				end
+			}
+			format.xls {
+				if current_user.try(:admin?) 
+					send_data @users.to_csv(col_sep: "\t")
+				else
+					redirect_to(users_path)
+					flash[:error] = "Only administrators may download data"
+				end
+			}
+		end
 	end
 
 	def create
@@ -45,10 +66,16 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def import
+		User.import(params[:file])
+		redirect_to root_url flash[:success] = "Users imported"
+	end
+
+
 	private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation, 
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :organization, :phone,
 						:biotechnology, :software, :networking_wirless, :physics_engineering, :chemistry, :medical_devices,
 						:availability, :mentoring, :deffered_payment, :raised_money, :successful_exit, :startup_experience)
 	end

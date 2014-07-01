@@ -1,11 +1,73 @@
 <% provide(:title, @user.name) %>
 <div class="row">
 	<div class="small-12 large-centered columns">
-		<div class="large-9 columns">
-			<h1><%= @user.name %></h1>
+		<div class="large-10 columns">
+			<h2><%= @user.name %></h2>
 		</div>
 		<div class="large-2 columns text-center">
 			<%= image_tag("merl.png") %>
+		</div>
+		<div class="large-4 columns">
+			<h4>Industry Experience</h4>
+			<ul>
+				<% if @user.biotechnology == true %>
+					<li>Biotechnology</li>
+				<% end %>
+				<% if @user.software == true %>
+					<li>Software</li>
+				<% end %>
+				<% if @user.networking_wirless == true %>
+					<li>Networking/wireless</li>
+				<% end %>
+				<% if @user.physics_engineering == true %>
+					<li>Physics/engineering</li>
+				<% end %>
+				<% if @user.chemistry == true %>
+					<li>Chemistry</li>
+				<% end %>
+				<% if @user.medical_devices == true %>
+					<li>Medical devices</li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="large-4 columns">
+			<h4>Mentorship Criteria</h4>
+			<ul>
+				<% if @user.availability == true %>
+					<li>Available for next 18 mo.</li>
+				<% end %>
+				<% if @user.mentoring == true %>
+					<li>Interested in mentoring</li>
+				<% end %>
+				<% if @user.deffered_payment == true %>
+					<li>Will accept deferred payment</li>
+				<% end %>
+				<% if @user.raised_money == true %>
+					<li>Raised > $5 MM at C-level</li>
+				<% end %>
+				<% if @user.successful_exit == true %>
+					<li>Have exited successfuly</li>
+				<% end %>
+				<% if @user.startup_experience == true %>
+					<li>Have experience with start-ups</li>
+				<% end %>
+			</ul>	
+		</div>
+		<div class="large-4 columns">
+			<h4>Personal Information</h4>
+			<ul class="vcard text-left">
+				<li class="fn"><%= @user.name %></li>
+				<% unless @user.organization.blank? %>
+					<li><%= @user.organization %></li>
+				<% end %>
+				<% unless @user.phone.blank? %>
+					<li><%= @user.phone %></li>
+				<% end %>
+				<li><%= mail_to @user.email %></li>
+				<% unless @user.organization.blank? %>
+					<li><%= link_to "Biography", @user.bio, :target => "_blank" %></li>
+				<% end %>
+			</ul>
 		</div>
 </div>
 

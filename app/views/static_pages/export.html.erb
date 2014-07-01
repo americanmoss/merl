@@ -1,0 +1,122 @@
+<% provide(:title, 'Export') %>
+<div class="row">
+	<div class="small-12 large-centered columns text-center">
+		<%= image_tag("merl.png") %>
+	</div>
+	<div class="small-12 large-centered">
+	<p>Use the interface below to download data from the MERL platform. Field definitions and other relevant documentation can be found below.</p>
+	</div>
+	<div class="small-8 large-centered columns text-center">
+		<ul class="button-group even-3">
+			<li><%= link_to "XLS", users_path(format: "xls"), class: "button secondary" %></li>
+			<li><a class="button disabled">Or</a></li>
+			<li><%= link_to "CSV", users_path(format: "csv"), class: "button secondary" %></li>
+		</ul>
+	</div>
+	<div class="small-12 large-centered colums">
+		<table>
+			<thead>
+				<th>Field Name</th>
+				<th>Description</th>
+				<th>Type</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td>Unique user ID supplied by the server; largely irrelevant for operating purposes</td>
+					<td>Interger</td>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td>Name of MERL member</td>
+					<td>String</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>Email of MERL member</td>
+					<td>String</td>
+				</tr>
+				<tr>
+					<td>Created at</td>
+					<td>Timestamp for when the MERL member first registered</td>
+					<td>Datetime</td>
+				</tr>
+				<tr>
+					<td>Updated at</td>
+					<td>Timestamp for when the MERL member most recently updated his or her profile</td>
+					<td>Datetime</td>
+				</tr>
+				<tr>
+					<td>Password digest</td>
+					<td>An encrypted key representing the user's password</td>
+					<td>Hash</td>
+				</tr>
+				<tr>
+					<td>Biotechnology</td>
+					<td>A binary variable indicating experience in biotechnology</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Software</td>
+					<td>A binary variable indicating experience in software</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Networking wirless</td>
+					<td>A binary variable indicating experience in networking/wirless solutions</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Physics engineering</td>
+					<td>A binary variable indicating experience in physics/engineering</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Medical devices</td>
+					<td>A binary variable indicating experience with medical devices</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Availability</td>
+					<td>A binary variable indicating availability over the next 18 months</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Mentoring</td>
+					<td>A binary variable indicating interest in mentoring</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Deffered payment (sic.)</td>
+					<td>A binary variable indicating willingness to take deferred payment</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Raised money</td>
+					<td>A binary variable indicating experience raising > $5 MM at C-suite level</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Successful exit</td>
+					<td>A binary variable indicating a past successful exit</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Startup experience</td>
+					<td>A binary variable indicating > 2 years of experience with start-ups or > 10 in an industry</td>
+					<td>Boolean</td>
+				</tr>
+				<tr>
+					<td>Remember token</td>
+					<td>An encrypted key representing a cookie in the user's browser</td>
+					<td>Hash</td>
+				</tr>
+				<tr>
+					<td>Admin</td>
+					<td>A binary variable representing the user's administrative priveleges</td>
+					<td>Boolean</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

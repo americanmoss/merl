@@ -23,9 +23,6 @@ $(function() {
 });
 
 $(document).ready(function() {
-	// $('#MERL-members').dataTable({
-	//  "sPaginationType": "foundation"
-	// });
 
     	// Setup - add a text input to each footer cell
     	$('#MERL-members tfoot th').each( function () {
@@ -34,18 +31,18 @@ $(document).ready(function() {
     	} );
  
     	// DataTable
-    	var table = $('#MERL-members').dataTable({
+    	var table = $('#MERL-members').DataTable({
     		"iDisplayLength": 5,
     		"aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
     	});
  
     	// Apply the filter
-    	table.columns().eq( 0 ).each( function ( colIdx ) {
+    	table.columns().each( function ( colIdx ) {
         		$( 'input', table.column( colIdx ).footer() ).on( 'keyup change', function () {
             		table
-                			.column( colIdx )
-        				.search( this.value )
-        				.draw();
+            			.column( colIdx )
+				.search( this.value )
+				.draw();
         		} );
     	} );
 } );
