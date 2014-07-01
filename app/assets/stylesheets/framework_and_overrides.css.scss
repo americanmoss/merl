@@ -33,6 +33,10 @@ div {
 	padding-top:rem-calc(50);
 }
 
+table {
+	width: 100%;
+}
+
 .call-to-action {
 	padding-bottom:rem-calc(50);
 }
@@ -51,3 +55,15 @@ form {
 	text-transform:uppercase;
 }
 
+thead {
+	font-family: "Open Sans", sans-serif !important;
+}
+
+.table-name {
+	font-weight:bold;
+	font-size: rem-calc(17);
+}
+
+tbody tr td ul li {
+	font-size: rem-calc(15);
+}

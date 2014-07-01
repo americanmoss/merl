@@ -1,0 +1,94 @@
+<% provide(:title, 'Edit Profile') %>
+<div class="row">
+	<div class="small-3 large-centered columns text-center">
+		<%= image_tag("merl.png") %>
+	</div>
+	<div class="small-8 large-centered columns">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+			<fieldset>
+			<legend>Account Information</legend>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+
+				<%= f.label :password_confirmation, "Confirmation" %>
+				<%= f.password_field :password_confirmation %>
+			</fieldset>
+			
+			<fieldset>
+			<legend>Industry Experience</legend>
+				<item class="form-item">
+				<%= f.check_box :biotechnology%>
+				<%= f.label :biotechnology, "Biotechnology" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :software%>
+				<%= f.label :software, "Software" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :networking_wirless%>
+				<%= f.label :networking_wirless, "Networking/Wireless Solutions" %>
+				</item>
+				
+				<item class="form-item">
+				<%= f.check_box :physics_engineering%>
+				<%= f.label :physics_engineering, "Physics/Engineering" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :chemistry%>
+				<%= f.label :chemistry, "Chemistry" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :medical_devices%>
+				<%= f.label :medical_devices, "Medical Devices" %>
+				</item>
+			</fieldset>
+
+			<fieldset>
+			<legend>Mentorship Qualifications</legend>
+				<item class="form-item">
+				<%= f.check_box :availability%>
+				<%= f.label :availability, "Available in the next 18 months as CEO/COO" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :mentoring%>
+				<%= f.label :mentoring, "Interested in mentoring companies" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :deffered_payment%>
+				<%= f.label :deffered_payment, "Will initially accept deferred payment or equity in lieu of salary" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :raised_money%>
+				<%= f.label :raised_money, "Have Raised at least $5M as C-level executive" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :successful_exit%>
+				<%= f.label :successful_exit, "Have participated in a successful company exit" %>
+				</item>
+
+				<item class="form-item">
+				<%= f.check_box :startup_experience%>
+				<%= f.label :startup_experience, "Have 2+ years with a start-up or 10+ years in industry" %>
+				</item>
+			</fieldset>
+
+			<div class="text-center"><%= f.submit "Save changes", class: "button secondary" %></div>
+    		<% end %>
+
+	</div>
+</div>
