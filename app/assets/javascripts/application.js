@@ -31,7 +31,7 @@ $(document).ready(function() {
     	} );
  
     	// DataTable
-    	var table = $('#MERL-members').dataTable({
+    	var table = $('#MERL-members').DataTable({
     		"iDisplayLength": 5,
     		"aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
     	});
