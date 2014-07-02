@@ -7,9 +7,15 @@
 	<p>Use the interface below to upload data to the MERL platform. Please note that this is <strong>NOT</strong> recommended after initial deployment, as it can cause duplicates to be created in the database. Be sure to <%= link_to "download a backup", export_path %> before proceeding.</p>
 	</div>
 	<div class="small-8 large-centered columns text-center">
+		<div class="file-inputs"></div>
 		<%= form_tag import_users_path, multipart:true do %>
 			<%= file_field_tag :file %>
-			<%= submit_tag :import, class: "button secondary" %>
+			
+			<ul class="button-group even-3">
+			<li><%= link_to "Choose file", "", class: "button secondary" %></li>
+			<li><a class="button disabled">And</a></li>
+			<li><%= submit_tag :import, class: "button secondary" %></li>
+		</ul>
 		<% end %>
 	</div>
 </div>

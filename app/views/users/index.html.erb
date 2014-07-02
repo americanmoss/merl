@@ -12,6 +12,9 @@
 					<th>Industry Experience</th>
 					<th>Mentorship Criteria</th>
 					<th>Bio</th>
+					<% if current_user.try(:admin?) %>
+						<th>Delete</th>
+					 <% end %>
 				</tr>
 			</thead>
 
@@ -19,6 +22,8 @@
 				<tr>
 					<th><input type="text" name="search_name" value="Search Name" class="search_init" /></th>
 					<th><input type="text" name="search_industry" value="Search Industry" class="search_init" /></th>
+					<th><input type="text" name="search_mentorship" value="Search Mentorship" class="search_init" /></th>
+					<th><input type="text" name="search_mentorship" value="Search Mentorship" class="search_init" /></th>
 					<th><input type="text" name="search_mentorship" value="Search Mentorship" class="search_init" /></th>
 				</tr>
 			</tfoot>
