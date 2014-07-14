@@ -64,7 +64,7 @@
 					<li><%= @user.phone %></li>
 				<% end %>
 				<li><%= mail_to @user.email %></li>
-				<% unless @user.organization.blank? %>
+				<% unless @user.bio.blank? %>
 					<li><%= link_to "Biography", @user.bio, :target => "_blank" %></li>
 				<% end %>
 			</ul>

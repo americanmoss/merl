@@ -4,6 +4,9 @@
 		<%= image_tag("merl.png") %>
 	</div>
 	<div class= "small-12 large-centered columns">
+		<p>The complete Maryland Entrepreneurs Resource List can be found below. Please note that the amount of MERL members per page can be adjusted using the dropdown menu on the left. To search, simply enter an industry or qualification into the search bar on the right. Please note that search terms can be chained together. For example, if you are looking for a MERL member that is available for next 18 months, has raised $5 MM or more at the C-suite level, and has industry experience in chemistry, you could simply type "18 mo $5 MM chemistry," which would yield only two results.</p>
+	</div>
+	<div class= "small-12 large-centered columns">
 		<table id="MERL-members">
 
 			<thead>
@@ -17,14 +20,6 @@
 					 <% end %>
 				</tr>
 			</thead>
-
-			<tfoot>
-				<tr>
-					<th><input type="text" name="search_name" value="Search Name" class="search_init" /></th>
-					<th><input type="text" name="search_industry" value="Search Industry" class="search_init" /></th>
-					<th><input type="text" name="search_mentorship" value="Search Mentorship" class="search_init" /></th>
-				</tr>
-			</tfoot>
 
 			<tbody>
 				<% @users.each do |user| %>
@@ -81,7 +76,7 @@
 								<td><%= link_to "Link", user.bio, :target => "_blank" %></td>
 							<% end %>
 							<% if current_user.try(:admin?) && !current_user?(user) %>
-							<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "You sure?" } %></td>
+								<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "You sure?" } %></td>
 							 <% end %>
 						</tr>
 					<% end %>

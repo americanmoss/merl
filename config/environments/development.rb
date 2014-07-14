@@ -14,7 +14,7 @@ Merl::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -26,4 +26,19 @@ Merl::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  #Mailer settings
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host:"localhost:3000" }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.google.com",
+    port: "587",
+    domain: "gmail.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "mookman74",
+    password: "~fj0rt3nK@ge)"
+  }
 end

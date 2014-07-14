@@ -16,12 +16,12 @@
 
 				<%= f.label :phone %>
 				<%= f.text_field :phone %>
-				<label><em>Please use XXX-XXX-XXXX format e.g. 123-456-7890 </em></label><br/>
+				<label><em>Please use XXX-XXX-XXXX format e.g. 123-456-7890</em></label><br/>
 
 				<%= f.label :password %>
 				<%= f.password_field :password %>
 
-				<%= f.label :password_confirmation, "Confirmation" %>
+				<%= f.label :password_confirmation, "Password Confirmation" %>
 				<%= f.password_field :password_confirmation %>
 			</fieldset>
 
@@ -32,6 +32,7 @@
 
 				<%= f.label :bio, "Link to bio" %>
 				<%= f.text_field :bio %>
+				<label><em>We prefer a link to your public Linkedin profile, though you may also use a link to a bio on your company's website or elsewhere.</em></label><br/>
 			</fieldset>
 			
 			<fieldset>
@@ -98,6 +99,11 @@
 				<%= f.check_box :startup_experience, {checked:false} %>
 				<%= f.label :startup_experience, "Have 2+ years with a start-up or 10+ years in industry" %>
 				</item>
+			</fieldset>
+
+			<fieldset>
+				<legend>Terms</legend>
+				<label><em>By joining MERL, you agree that all the information above will be listed publicly on this website. We will never share your data with anyone outside of the Maryland entrepreneurial community.</em></label><br/>
 			</fieldset>
 
 			<div class="text-center"><%= f.submit "Join MERL", class: "button secondary" %></div>

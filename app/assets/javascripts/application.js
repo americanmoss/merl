@@ -25,13 +25,13 @@ $(function() {
 $(document).ready(function() {
 
     	// Setup - add a text input to each footer cell
-    	$('#MERL-members tfoot th').each( function () {
-        		var title = $('#MERL-members thead th').eq( $(this).index() ).text();
-        		$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    	} );
+    	// $('#MERL-members tfoot th').each( function () {
+        	//	var title = $('#MERL-members thead th').eq( $(this).index() ).text();
+        	//	$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    	// } );
  
     	// DataTable
-    	var table = $('#MERL-members').DataTable({
+    	var table = $('#MERL-members').dataTable({
     		"iDisplayLength": 5,
     		"aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
     	});
