@@ -81,15 +81,16 @@ Merl::Application.configure do
 
   #Mailer settings
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: "merl.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.google.com",
-    port: 587,
-    domain: "gmail.com",
+    address: "smtp.sendgrid.com",
+    port: '587',
+    domain: "heroku.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV['GMAIL_USERNAME'],
-    password: ENV['GMAIL_PASSWORD']
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD']
   }
 
 end
