@@ -87,9 +87,10 @@ Merl::Application.configure do
     port: 587,
     domain: "heroku.com",
     authentication: "plain",
-    enable_starttls_auto: true,
     user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD']
+    password: ENV['SENDGRID_PASSWORD'],
+    enable_starttls_auto: true,
+    :openssl_verify_mode => 'none'
   }
 
 end
