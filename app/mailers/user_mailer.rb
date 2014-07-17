@@ -1,5 +1,7 @@
 class UserMailer < ActionMailer::Base
-	default from: "lsaffer@tedco.md"
+	default from: "lsaffer@tedco.md",
+		bcc: 'lsaffer@tedco.md',
+		reply_to: 'lsaffer@tedco.md'
 
 	def welcome_email(user)
 		@user = user
