@@ -40,7 +40,7 @@ Merl::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
@@ -85,7 +85,7 @@ Merl::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.com",
-    port: '587',
+    port: 587,
     domain: "heroku.com",
     authentication: "plain",
     enable_starttls_auto: true,
