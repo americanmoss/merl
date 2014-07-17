@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
 	def welcome_email(user)
 		@user = user
-		@url = signin_path
+		@url = signin_url
 		@name = @user.name
 		email_with_name = "#{@user.name} <#{@user.email}>"
 		mail(to: email_with_name, subject: "Welcome to MERL")
