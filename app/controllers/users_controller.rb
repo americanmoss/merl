@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
 	before_action :signed_in_user, only: [:edit, :update, :destroy, :import]
 	before_action :correct_user, only: [:edit, :update]
-	before_action :admin_user, only: [:destroy, :import, :private]
+	before_action :admin_user, only: [:destroy, :import]
 	
 	def new
 		@user = User.new
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :organization, :phone,
 						:biotechnology, :software, :networking_wirless, :physics_engineering, :chemistry, :medical_devices,
-						:availability, :mentoring, :deffered_payment, :raised_money, :successful_exit, :startup_experience)
+						:availability, :mentoring, :deffered_payment, :raised_money, :successful_exit, :startup_experience, :private)
 	end
 
 	def signed_in_user
