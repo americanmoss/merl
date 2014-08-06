@@ -76,7 +76,7 @@
 								<td><%= link_to "Link", user.bio, :target => "_blank" %></td>
 							<% end %>
 							<% if current_user.try(:admin?) && !current_user?(user) %>
-								<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "You sure?" } %></td>
+								<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %></td>
 							 <% end %>
 						</tr>
 					<% end %>
@@ -84,4 +84,91 @@
 			</tbody>
 		</table>
 	</div>
+
+		<% # This starts a new table for the private members of the merl list %>
+	<% if current_user.try(:admin?) %>
+		<div class= "small-12 large-centered columns">
+			<p>Below is a list of MERL members that have elected not to be displayed publicly. This section <strong>cannot</strong> be seen by the general public.</p>
+		</div>
+		<div class= "small-12 large-centered columns">
+			<table id="MERL-members">
+
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Industry Experience</th>
+						<th>Mentorship Criteria</th>
+						<th>Bio</th>
+						<% if current_user.try(:admin?) %>
+							<th>Delete</th>
+						 <% end %>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @users.each do |user| %>
+						<% if user.private? %>
+							<tr>
+								<td><%= link_to user.name, user, class: "table-name" %></td>
+								<td>
+									<ul>
+										<% if user.biotechnology == true %>
+											<li>Biotechnology</li>
+										<% end %>
+										<% if user.software == true %>
+											<li>Software</li>
+										<% end %>
+										<% if user.networking_wirless == true %>
+											<li>Networking/wireless</li>
+										<% end %>
+										<% if user.physics_engineering == true %>
+											<li>Physics/engineering</li>
+										<% end %>
+										<% if user.chemistry == true %>
+											<li>Chemistry</li>
+										<% end %>
+										<% if user.medical_devices == true %>
+											<li>Medical devices</li>
+										<% end %>
+									</ul>
+								</td>
+								<td>
+									<ul>
+										<% if user.availability == true %>
+											<li>Available for next 18 mo.</li>
+										<% end %>
+										<% if user.mentoring == true %>
+											<li>Interested in mentoring</li>
+										<% end %>
+										<% if user.deffered_payment == true %>
+											<li>Will accept deferred payment</li>
+										<% end %>
+										<% if user.raised_money == true %>
+											<li>Raised > $5 MM at C-level</li>
+										<% end %>
+										<% if user.successful_exit == true %>
+											<li>Have exited successfuly</li>
+										<% end %>
+										<% if user.startup_experience == true %>
+											<li>Have experience with start-ups</li>
+										<% end %>
+									</ul>	
+								</td>
+								<% if user.bio.blank? %>
+									<td>N/A</td>
+								<% else %> 
+									<td><%= link_to "Link", user.bio, :target => "_blank" %></td>
+								<% end %>
+								<% if current_user.try(:admin?) && !current_user?(user) %>
+									<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %></td>
+								 <% end %>
+							</tr>
+						<% else %>
+						<% end %>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	<% else %>
+	<% end %>
 </div>	
