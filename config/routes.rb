@@ -9,6 +9,7 @@ Merl::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/export', to: 'static_pages#export', via: 'get'
   match '/import', to: 'static_pages#import', via: 'get'
+  match '/private',  to: 'users#private', via: 'get'
   match '/signup',  to: 'users#new', via: 'get'
   match '/signin',  to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
