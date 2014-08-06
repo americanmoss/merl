@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
 	before_action :signed_in_user, only: [:edit, :update, :destroy, :import]
 	before_action :correct_user, only: [:edit, :update]
-	before_action :admin_user, only: [:destroy, :import]
+	before_action :admin_user, only: [:destroy, :import, :private]
 	
 	def new
 		@user = User.new
@@ -35,6 +35,10 @@ class UsersController < ApplicationController
 				end
 			}
 		end
+	end
+
+	def private
+		@users = User.all
 	end
 
 	def create
