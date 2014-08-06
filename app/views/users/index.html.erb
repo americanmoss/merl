@@ -23,7 +23,7 @@
 
 			<tbody>
 				<% @users.each do |user| %>
-					<% unless user.admin? %>
+					<% unless user.admin? or user.private? %>
 						<tr>
 							<td><%= link_to user.name, user, class: "table-name" %></td>
 							<td>
