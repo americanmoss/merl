@@ -1,4 +1,5 @@
 Merl::Application.routes.draw do
+  resources :users, path: 'members'
   resources :users do
     collection { post :import }
   end
