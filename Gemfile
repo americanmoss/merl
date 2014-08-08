@@ -49,6 +49,9 @@ gem 'jbuilder', '1.0.2'
 gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails', '~> 2.1.10.0.0'
 
+# Use friendly-id for slugged URL displays
+gem 'friendly_id', '~> 5.0.0'
+
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
 	gem 'sdoc', '0.3.20', require: false

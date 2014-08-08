@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 	end
 
 	def index
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :organization, :phone,
 						:biotechnology, :software, :networking_wirless, :physics_engineering, :chemistry, :medical_devices,
-						:availability, :mentoring, :deffered_payment, :raised_money, :successful_exit, :startup_experience, :private)
+						:availability, :mentoring, :deffered_payment, :raised_money, :successful_exit, :startup_experience, :private, :slug)
 	end
 
 	def signed_in_user
