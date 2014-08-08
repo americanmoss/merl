@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def edit 
+	def edit
 	end
 
 	def destroy
@@ -89,7 +89,7 @@ class UsersController < ApplicationController
 	end
 
 	def correct_user
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		redirect_to(root_url) unless current_user?(@user)
 	end
 
