@@ -22,7 +22,7 @@
 			</thead>
 
 			<tbody>
-				<% @users.each do |user| %>
+				<% @users.shuffle.each do |user| %>
 					<% unless user.admin? or user.private? %>
 						<tr>
 							<td><%= link_to user.name, user, class: "table-name" %></td>

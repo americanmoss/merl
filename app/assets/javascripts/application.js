@@ -34,7 +34,8 @@ $(document).ready(function() {
     	// DataTable
     	var table = $('#MERL-members').dataTable({
     		"iDisplayLength": 5,
-    		"aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+    		"aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                      "order": [[ 3, "asc" ]]
     	});
  
     	// Apply the filter
