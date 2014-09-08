@@ -73,7 +73,7 @@
 							<% if user.bio.blank? %>
 								<td>N/A</td>
 							<% else %> 
-								<td><%= link_to "Link", user.bio, :target => "_blank" %></td>
+								<td><%= link_to "Link", url_with_protocol(user.bio), :target => "_blank" %></td>
 							<% end %>
 							<% if current_user.try(:admin?) && !current_user?(user) %>
 								<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %></td>

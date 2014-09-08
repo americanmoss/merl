@@ -65,7 +65,7 @@
 				<% end %>
 				<li><%= mail_to @user.email %></li>
 				<% unless @user.bio.blank? %>
-					<li><%= link_to "Biography", @user.bio, :target => "_blank" %></li>
+					<li><%= link_to "Biography", url_with_protocol(@user.bio), :target => "_blank" %></li>
 				<% end %>
 			</ul>
 		</div>
