@@ -6,6 +6,7 @@ Merl::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   get "users/new"
   root  'static_pages#home'
+  match '/members/:id/toggle-privacy', to: 'users#toggle_private', via: 'patch', as: 'toggle_private'
   match '/about',   to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/export', to: 'static_pages#export', via: 'get'

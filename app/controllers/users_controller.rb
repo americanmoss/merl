@@ -72,6 +72,12 @@ class UsersController < ApplicationController
 		redirect_to root_url flash[:success] = "Users imported"
 	end
 
+	def toggle_private
+		@user = User.friendly.find(params[:id])
+		@user.private = !@user.private
+		@user.save
+		redirect_to users_path
+	end
 
 	private
 
