@@ -76,8 +76,9 @@
 								<td><%= link_to "Link", url_with_protocol(user.bio), :target => "_blank" %></td>
 							<% end %>
 							<% if current_user.try(:admin?) && !current_user?(user) %>
-								<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %>
-									<%= link_to "Toggle Privacy", toggle_private_path(id: user.id), class: "button tiny", method: :patch %></td>
+								<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %><br/>
+									<%= link_to "Toggle Privacy", toggle_private_path(id: user.id), class: "button tiny", method: :patch %><br/>
+									<%= link_to "Edit", edit_user_path(user), class: "button tiny" %></td>
 							 <% end %>
 						</tr>
 					<% end %>
@@ -161,8 +162,9 @@
 									<td><%= link_to "Link", user.bio, :target => "_blank" %></td>
 								<% end %>
 								<% if current_user.try(:admin?) && !current_user?(user) %>
-									<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %>
-									<%= link_to "Toggle Privacy", toggle_private_path(id: user.id), class: "button tiny", method: :patch %></td>
+									<td><%= link_to "Delete", user, class: "button tiny", method: :delete, data: { confirm: "Are you sure you'd like to delete this MERL member?" } %><br/>
+									<%= link_to "Toggle Privacy", toggle_private_path(id: user.id), class: "button tiny", method: :patch %><br/>
+									<%= link_to "Edit", edit_user_path(user), class: "button tiny" %></td>
 								 <% end %>
 							</tr>
 						<% else %>

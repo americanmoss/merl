@@ -60,7 +60,11 @@ class UsersController < ApplicationController
 
 	def update 
 		if @user.update_attributes(user_params)
-			flash[:success] = "Profile updated"
+			if current_user.try(:admin?) 
+				flash[:success] = "You updated #{@user.name}'s profile as admin"
+			else
+				flash[:success] = "Profile updated"
+			end
 			redirect_to @user
 		else
 			render 'edit'
@@ -76,6 +80,7 @@ class UsersController < ApplicationController
 		@user = User.friendly.find(params[:id])
 		@user.private = !@user.private
 		@user.save
+		flash[:success] = "You updated #{@user.name}'s privacy status to #{@user.private} as admin"
 		redirect_to users_path
 	end
 
@@ -96,7 +101,7 @@ class UsersController < ApplicationController
 
 	def correct_user
 		@user = User.friendly.find(params[:id])
-		redirect_to(root_url) unless current_user?(@user)
+		redirect_to(root_url) unless current_user?(@user) || current_user.try(:admin?)
 	end
 
 	def admin_user
